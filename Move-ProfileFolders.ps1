@@ -1,8 +1,8 @@
-. .\Restart-Explorer.ps1
-
 Param(
     [string] $toFolder = "D:\Users\" + ($env:APPDATA).Split("\")[-3]
 )
+
+. .\Restart-Explorer.ps1
 
 Write-Host ""
 Write-Host "Moving Library folders to D:" -ForegroundColor Green

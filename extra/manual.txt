@@ -1,3 +1,7 @@
+Settings -> For Developers -> PowerShell
+OR
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
 Instalare font SourceCodePro+Powerline+Awesome+Regular
 Sync VS Code
 
