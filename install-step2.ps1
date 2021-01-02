@@ -48,7 +48,7 @@ Write-Host "------------------------------------" -ForegroundColor Green
 
 $wingetApps = @(
     "Microsoft.WindowsTerminal",
-    "Git.Git",
+    #   "Git.Git",
     "Notepad++.Notepad++",
     "7zip.7zip",
     "Microsoft.VisualStudioCode",
