@@ -120,7 +120,7 @@ public extern static int SHSetKnownFolderPath(ref Guid folderId, uint flags, Int
     # Validate the path
 
     if (!(Test-Path $Path -PathType Container)) {
-        New-Item -ItemType Directory -Force -Path $newPath
+        New-Item -ItemType Directory -Force -Path $Path
     }
 
     # Call SHSetKnownFolderPath
