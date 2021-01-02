@@ -9,3 +9,6 @@ dotfiles
   - C:\Users\alexa\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 
 Ublock rules from gist
+
+Move OneDrive
+Add Business OneDrive

@@ -5,7 +5,7 @@
 New-Item -ItemType Directory -Force -Path D:\Dev
 New-Item -ItemType Directory -Force -Path D:\Alex
 
-.\Move-Libraries.ps1
+.\Move-ProfileFolders.ps1
 
 Write-Host ""
 Write-Host "Congfiguring Power scheme to High performance" -ForegroundColor Green
@@ -27,8 +27,6 @@ Write-Host "Enable WSL 2..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
-
-
 
 
 Restart-Computer
