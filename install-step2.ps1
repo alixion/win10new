@@ -88,7 +88,13 @@ Write-Host "------------------------------------" -ForegroundColor Green
 Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 
+$installVS = Read-Host 'Do you want to install Visual Studio (y/n)'
+if ($installVS -eq "y") {
+    .\install-visualstudio.ps1
+}
 
-.\install-visualstudio.ps1
 
-.\Install-Office365.ps1
+$installOffice = Read-Host 'Do you want to install Office 365 (y/n)'
+if ($installOffice -eq "y") {
+    .\Install-Office365.ps1
+}

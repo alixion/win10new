@@ -5,7 +5,7 @@
 New-Item -ItemType Directory -Force -Path D:\Dev
 New-Item -ItemType Directory -Force -Path D:\Alex
 
-.\MoveLibraries.ps1
+.\Move-ProfileFolders.ps1
 
 Write-Host ""
 Write-Host "Congfiguring Power scheme to High performance" -ForegroundColor Green
