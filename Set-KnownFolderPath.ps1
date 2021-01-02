@@ -118,11 +118,10 @@ public extern static int SHSetKnownFolderPath(ref Guid folderId, uint flags, Int
     }
 
     # Validate the path
-    if (Test-Path $Path -PathType Container) {
+
+    if (!(Test-Path $Path -PathType Container)) {
+        New-Item -ItemType Directory -Force -Path $newPath
+
         # Call SHSetKnownFolderPath
         return $Type::SHSetKnownFolderPath([ref]$KnownFolders[$KnownFolder], 0, 0, $Path)
     }
-    else {
-        throw New-Object System.IO.DirectoryNotFoundException "Could not find part of the path $Path."
-    }
-}
