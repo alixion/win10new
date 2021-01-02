@@ -2,6 +2,7 @@
 . .\Set-OpenWithVisualStudioCode.ps1
 . .\Add-Path.ps1
 . .\Install-KernelUpdate.ps1
+. .\Restart-Explorer.ps1
 
 
 Write-Host ""
@@ -61,12 +62,12 @@ $wingetApps = @(
 )
 
 foreach ($app in $wingetApps) {
-    $appName = $app.Split(".")[0]
+    $appName = $app.Split(".")[1]
     Write-Host ""
     Write-Host "Installing $appName..." -ForegroundColor Green
     Write-Host "------------------------------------" -ForegroundColor Green
 
-    winget install --id $appName -e
+    winget install --id $app -e
 }
 
 Write-Host ""
