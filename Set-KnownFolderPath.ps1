@@ -121,7 +121,8 @@ public extern static int SHSetKnownFolderPath(ref Guid folderId, uint flags, Int
 
     if (!(Test-Path $Path -PathType Container)) {
         New-Item -ItemType Directory -Force -Path $newPath
-
-        # Call SHSetKnownFolderPath
-        return $Type::SHSetKnownFolderPath([ref]$KnownFolders[$KnownFolder], 0, 0, $Path)
     }
+
+    # Call SHSetKnownFolderPath
+    return $Type::SHSetKnownFolderPath([ref]$KnownFolders[$KnownFolder], 0, 0, $Path)
+}
