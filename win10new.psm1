@@ -38,6 +38,13 @@ function Get-RemoteFile {
 
         https://github.com/JourneyOver/
     #>
+
+    function Test-ValidUrlFormat {
+        param(
+            [System.Uri]$url
+        )
+        return ($null -ne $url.AbsoluteURI -and $url.Scheme -match '[http|https]');
+    }
   
     # Validate the URL, if it's not a proper URL, throw an Error
     if (-not (Test-ValidUrlFormat($url))) {
@@ -80,12 +87,7 @@ function Get-RemoteFile {
   
     $client.DownloadFile( $url, $path );
 
-    function Test-ValidUrlFormat {
-        param(
-            [System.Uri]$url
-        )
-        return ($null -ne $url.AbsoluteURI -and $url.Scheme -match '[http|https]');
-    }
+    
 }
 function Restart-Explorer {
     <#
