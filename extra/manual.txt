@@ -1,14 +1,31 @@
-Settings -> For Developers -> PowerShell
-OR
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Before running
+==============================
+  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
-Instalare font SourceCodePro+Powerline+Awesome+Regular + other fonts?
-Sync VS Code
+  Instalare fonturi
 
-dotfiles
-  - C:\Users\alexa\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 
-Ublock rules from gist
+After running
+=========================
+  Sync VS Code
+  Ublock rules from gist in all browsers
+  Move OneDrive
+  Add Business OneDrive
 
-Move OneDrive
-Add Business OneDrive
+Apps Not in winget
+=========================
+  Freedom
+  Foobar
+  XMedia Recode
+  Zeplin
+
+
+---
+de facut
+----
+delete all shortcuts on desktop
+Windows start menu
+Windows task bar pin and unpin
+
+
+
