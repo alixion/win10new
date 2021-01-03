@@ -40,7 +40,7 @@ function Get-RemoteFile {
     #>
   
     # Validate the URL, if it's not a proper URL, throw an Error
-    if (-not (Valid-UrlFormat($url))) {
+    if (-not (Test-ValidUrlFormat($url))) {
         Write-Error "$url is not a valid URL.";
         return;
     }
@@ -152,7 +152,7 @@ function Install-KernelUpdate {
     If (!(Test-Path -Path $tmp )) {
         Write-Host "Downloading Kernel Update for WSL2"
         #Invoke-WebRequest -Uri $Url -OutFile $tmp
-        Get-RemoteFile -url $Url -path $tmp
+        Get-RemoteFile -url $Url -path $env:TEMP
     }
     
     

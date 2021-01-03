@@ -13,7 +13,7 @@ Automating Windows 10 Developer Machine Setup
 ## Before running
 
 - Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-- Instalare fonturi
+- Install Fonts
 
 ## After running
 
