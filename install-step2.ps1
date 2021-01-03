@@ -79,7 +79,13 @@ Write-Host ""
 Write-Host "Install Oh-My-Posh..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 #New-Item -path $profile -type file –force
-.\Install-OhMyPosh.ps1
+Install-Module posh-git -Scope CurrentUser -Force
+Install-Module oh-my-posh -Scope CurrentUser -Force
+
+if (!(Test-Path -Path $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force
+}
+Copy-Item -Path $PWD\extra\Microsoft.PowerShell_profile.ps1 -Destination $PROFILE 
 
 Write-Host ""
 Write-Host "Install Oh-My-Posh in Powershell Core..." -ForegroundColor Green
@@ -90,8 +96,8 @@ Write-Host ""
 Write-Host "Copy Windows Terminal settings.json ..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 New-Item -Path $HOME\WindowsTerminalAssets -ItemType Directory -Force
-Copy-Item -Path  .\extra\WindowsTerminal\prime-logo.png -Destination $HOME\WindowsTerminalAssets
-Copy-Item -Path  .\extra\WindowsTerminal\settings.json -Destination "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\"
+Copy-Item -Path  $PWD\extra\WindowsTerminal\prime-logo.png -Destination $HOME\WindowsTerminalAssets
+Copy-Item -Path  $PWD\extra\WindowsTerminal\settings.json -Destination "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\"
 
 
 $installVS = Read-Host 'Do you want to install Visual Studio (y/n)'
