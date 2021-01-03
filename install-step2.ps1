@@ -70,22 +70,19 @@ Write-Host "Add 7Zip to Path..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Add-Path -String "C:\Program Files\7-Zip"
 
+$location = $PWD
 Write-Host ""
 Write-Host "Add Open With Code..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
-Set-OpenWithVisualStudioCode -Scope User -File -Directory
+Set-OpenWithVisualStudioCode -Scope User -File -Directory # changes location, must reset to script path
+
+Set-Location -Path $location
 
 Write-Host ""
 Write-Host "Install Oh-My-Posh..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 #New-Item -path $profile -type file –force
-Install-Module posh-git -Scope CurrentUser -Force
-Install-Module oh-my-posh -Scope CurrentUser -Force
-
-if (!(Test-Path -Path $PROFILE)) {
-    New-Item -ItemType File -Path $PROFILE -Force
-}
-Copy-Item -Path $PWD\extra\Microsoft.PowerShell_profile.ps1 -Destination $PROFILE 
+.\Install-OhMyPosh.ps1
 
 Write-Host ""
 Write-Host "Install Oh-My-Posh in Powershell Core..." -ForegroundColor Green
