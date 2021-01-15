@@ -53,7 +53,8 @@ $wingetApps = @(
     "VideoLAN.VLC",
     "AntibodySoftware.WizTree",
     "XnSoft.XnViewClassic",
-    "Zoom.Zoom"
+    "Zoom.Zoom",
+    "Armin2208.WindowsAutoNightMode"
 )
 
 foreach ($app in $wingetApps) {
