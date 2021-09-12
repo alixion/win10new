@@ -54,7 +54,8 @@ $wingetApps = @(
     "AntibodySoftware.WizTree",
     "XnSoft.XnViewClassic",
     "Zoom.Zoom",
-    "Armin2208.WindowsAutoNightMode"
+    "Armin2208.WindowsAutoNightMode",
+    "JanDeDobbeleer.OhMyPosh"
 )
 
 foreach ($app in $wingetApps) {
@@ -71,24 +72,10 @@ Write-Host "Add 7Zip to Path..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Add-Path -String "C:\Program Files\7-Zip"
 
-$location = $PWD
 Write-Host ""
 Write-Host "Add Open With Code..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 Set-OpenWithVisualStudioCode -Scope User -File -Directory # changes location, must reset to script path
-
-Set-Location -Path $location
-
-Write-Host ""
-Write-Host "Install Oh-My-Posh..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-#New-Item -path $profile -type file –force
-.\Install-OhMyPosh.ps1
-
-Write-Host ""
-Write-Host "Install Oh-My-Posh in Powershell Core..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-start-process pwsh .\Install-OhMyPosh.ps1
 
 Write-Host ""
 Write-Host "Copy Windows Terminal settings.json ..." -ForegroundColor Green
@@ -96,6 +83,8 @@ Write-Host "------------------------------------" -ForegroundColor Green
 New-Item -Path $HOME\WindowsTerminalAssets -ItemType Directory -Force
 Copy-Item -Path  $PWD\extra\WindowsTerminal\prime-logo.png -Destination $HOME\WindowsTerminalAssets
 Copy-Item -Path  $PWD\extra\WindowsTerminal\settings.json -Destination "$env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\"
+
+Get-RemoteFile "https://gist.githubusercontent.com/shanselman/1f69b28bfcc4f7716e49eb5bb34d7b2c/raw/ohmyposhv3-v2.json" $env:LocalAppData\Programs\oh-my-posh\themes
 
 
 $installVS = Read-Host 'Do you want to install Visual Studio (y/n)'

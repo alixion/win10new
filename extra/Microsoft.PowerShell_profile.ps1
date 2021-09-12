@@ -1,11 +1,1 @@
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-Theme Paradox
-
-# PowerShell parameter completion shim for the dotnet CLI
-Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
-    param($commandName, $wordToComplete, $cursorPosition)
-    dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
-        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-    }
-}
+oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\ohmyposhv3-v2.json | Invoke-Expression
