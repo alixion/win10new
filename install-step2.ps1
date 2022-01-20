@@ -44,7 +44,7 @@ $wingetApps = @(
     "Docker.DockerDesktop",
     "Google.Chrome",
     "Mozilla.Firefox",
-    "Armin2208.WindowsAutoNightMode",
+    #"Armin2208.WindowsAutoNightMode",
     "JetBrains.Toolbox",
     "Logitech.Options",
     "Microsoft.PowerToys",
@@ -54,8 +54,10 @@ $wingetApps = @(
     "AntibodySoftware.WizTree",
     "XnSoft.XnViewClassic",
     "Zoom.Zoom",
-    "Armin2208.WindowsAutoNightMode",
-    "JanDeDobbeleer.OhMyPosh"
+    "Doist.Todoist",
+    "PeterPawlowski.foobar2000"
+    "JanDeDobbeleer.OhMyPosh",
+    
 )
 
 foreach ($app in $wingetApps) {
